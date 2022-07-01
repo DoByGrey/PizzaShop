@@ -10,3 +10,10 @@ function something()
   alert(x);
 
 }
+
+function add_to_card()
+{
+
+  alert('hello, it is working');
+
+}
