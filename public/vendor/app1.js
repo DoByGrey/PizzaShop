@@ -18,7 +18,13 @@ function add_to_card(id)
   window.localStorage.setItem(key, x);  // hh['bbb'] = x
 
   // вывод количество item's в корзине
-  alert('Items in your card: ' + cart_get_number_of_items());
+  update_orders_input();
+}
+
+function update_orders_input()
+{
+  var orders = cart_get_orders();
+  $('#orders_input').val(orders);
 }
 
 function cart_get_number_of_items()
@@ -29,7 +35,7 @@ function cart_get_number_of_items()
     var key = window.localStorage.key(i);         // получаем ключ
     var value = window.localStorage.getItem(key); // получаем значение аналог в ruby hh['bbb'] = x
     
-    if(keyindexOf('product_') == 0)
+    if(key.indexOf('product_') == 0)
     {
       cnt = cnt + value * 1;
     }
@@ -40,13 +46,13 @@ function cart_get_number_of_items()
 
 function cart_get_orders()
 {
-  var orders = 0;
+  var orders = '';
   for(var i = 0; i < window.localStorage.length; i++)
   {
     var key = window.localStorage.key(i);         // получаем ключ
     var value = window.localStorage.getItem(key); // получаем значение аналог в ruby hh['bbb'] = x
     
-    if(keyindexOf('product_') == 0)
+    if(key.indexOf('product_') == 0)
     {
       orders = orders + key + '=' + value + ',' ;
     }
