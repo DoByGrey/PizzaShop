@@ -1,6 +1,5 @@
 function something()
 {
-
   var x = window.localStorage.getItem('bbb');
   
   x = x * 1 + 1;
@@ -8,12 +7,13 @@ function something()
   window.localStorage.setItem('bbb', x);
   
   alert(x);
-
 }
 
 function add_to_card(id)
 {
+  var key = 'product_' + id;
 
-  alert('hello, it is working: ' + id);
-
+  var x = window.localStorage.getItem(key);
+  x = x * 1 + 1;
+  window.localStorage.setItem(key, x);  
 }
