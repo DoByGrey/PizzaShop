@@ -16,6 +16,8 @@ function add_to_card(id)
   var x = window.localStorage.getItem(key); // x = hh['bbb']
   x = x * 1 + 1; // x = x + 1
   window.localStorage.setItem(key, x);  // hh['bbb'] = x
+
+  alert('Items in your card: ' + cart_get_number_of_items());
 }
 
 function cart_get_number_of_items()
