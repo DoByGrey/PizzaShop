@@ -11,9 +11,9 @@ function something()
 
 }
 
-function add_to_card()
+function add_to_card(id)
 {
 
-  alert('hello, it is working');
+  alert('hello, it is working: ' + id);
 
 }
