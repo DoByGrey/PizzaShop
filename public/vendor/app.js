@@ -17,6 +17,7 @@ function add_to_card(id)
   x = x * 1 + 1; // x = x + 1
   window.localStorage.setItem(key, x);  // hh['bbb'] = x
 
+  // вывод количество item's в корзине
   alert('Items in your card: ' + cart_get_number_of_items());
 }
 
