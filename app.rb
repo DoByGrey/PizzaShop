@@ -23,7 +23,7 @@ post '/cart' do
 	orders_input = params[:orders]
 	@orders = parse_orders_input orders_input
 
-  "Hello World! #{@orders.inspect}"
+  erb :cart
 end
 
 def parse_orders_input orders_input
