@@ -23,6 +23,17 @@ get '/about' do
 	erb :about
 end
 
+post '/place_order' do
+	@order = Order.create params[:order]
+	
+	if @order.save
+		erb :order_placed
+	else
+		@error = @order.errors.full_messages.first
+		erb "Error"
+	end	
+end	
+
 post '/cart' do
 	@orders_input = params[:orders_input]
 	@items = parse_orders_input @orders_input
